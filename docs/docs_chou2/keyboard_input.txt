@@ -1,0 +1,46 @@
+201015
+
+keyboard入力をとる。
+pywinautoで起動アプリのコントロールができそうだが、
+focusのsetはdialog(アプリ内の部品)に対してのみか。
+applicationのidはtitleからとれた。
+titleはtitleリストを取得し、そこから選んで貼り付けた。
+結局forcusはwindowsのsystem apiをラッピングしているっぽい。
+
+
+forcusをロックしておくか、keyboard入力を取得して送るか。
+pywinautoでkeyboardモジュールでappにkeyを送れるようだが、
+key入力はとれない。普通にinput()でとれるだろうが、keyboardとqrcodeの区別
+ができるのか？？？
+forcusがとれてれば、区別する必要もないか。
+
+
+https://superuser.com/questions/77561/is-it-possible-to-use-different-keyboards-for-different-applications
+
+
+If you are a system programmer, then it should be easy for you to get this functionality. Steps using AutoHotKey script for Windows:
+
+Make an AutoHotKey script that can detect keystrokes on different keyboard,
+Then using windows handle, get the winID for both programs
+Map different keyboards to different WinIDs
+I had done the similar function for controlling my music player even my active window was VS-2010/MatLab/ or any other window.
+
+
+c#の場合
+https://stackoverflow.com/questions/91234/multiple-keyboards-and-low-level-hooks
+
+
+Yes I stand corrected, my bad, learning something new every day.
+
+Here's my attempt at making up for it :) :
+
+Register the devices you want to use for raw input (the two keyboards) with ::RegisterRawInputDevices().
+
+You can get these devices from GetRawInputDeviceList()
+
+After you've registered your devices, you will start getting WM_INPUT messages.
+
+The lParam of the WM_INPUT message contains a RAWKEYBOARD structure that you can use to determine the keyboard where the input came from, plus the virtual keycode and the type of message (WM_KEYDOWN, WM_KEYUP, ...)
+
+So you can set a flag of where the last message came from and then dispatch it to the regular keyboard input handlers.
+

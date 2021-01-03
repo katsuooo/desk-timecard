@@ -1,0 +1,18 @@
+200107
+tuunen表示
+月が一桁の時、endColNameの０埋めができていない。
+エンド検出ができず、永遠とdbをよんでる。
+moto
+    var nowDate = moment();
+    endColName = 'cs_' + String(nowDate.year()) + String(nowDate.month() + 1);
+henkou
+    var nowDate = moment();
+    var monthStr = String(nowDate.month() + 1).padStart(2, '0');
+    endColName = 'cs_' + String(nowDate.year()) + monthStr;
+
+padStart関数で0埋めするように変更する。
+
+
+常にnowDate基準となるため、昨年のデータはみれない。
+ひとまず、これで修正する。
+

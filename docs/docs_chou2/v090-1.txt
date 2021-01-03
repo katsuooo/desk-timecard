@@ -1,0 +1,7 @@
+201105
+
+トｩエン
+のqrcodeがつくれない。
+fr20KeyboardInput.vueで変換する。
+qrcode = トゥエン
+がくるとトｩエンに変換する。

@@ -1,0 +1,28 @@
+配車データチェック
+スタッフとか表示されない。時間も表示されない。
+[ { "cs": [ { "name": "大見謝　嘉", "mukae_time": "09:00", "mukae_place": "クリニック", "touchaku_time": "", 
+"mukae_method": "自車", "place": "シュシュ", "gohome_time": "", "gohome_method": "自車", "arrival_time": "16:00", "cancel": 
+"none", "score": 0, "order": 1, "fixed": false } ], 
+
+"ms": [], "no": 0, 
+"driver": "自", "mtime": "", "otime": "" },
+
+データにいない。展開するデータを間違えてる？
+
+        readHaisha(x){
+            this.carList_mukae = JSON.parse(JSON.stringify(x.carList.mukae));
+            this.carList_okuri = JSON.parse(JSON.stringify(x.carList.okuri));
+        }
+
+x = {appDate, moto, carList}
+carList内にデータがない。mongoDataみてみる。
+
+データをサーバからdlして入れ替えるとデータがあった。
+単にデータが入っていなかっただけ。
+
+
+
+
+
+
+

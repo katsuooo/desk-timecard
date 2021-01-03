@@ -1,0 +1,28 @@
+201112
+
+テキストの色
+<td class="fc-day fc-widget-content fc-mon fc-future" data-date="2020-12-07"></td>
+
+
+<a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end ng-scope" style="background-color:#faf0e6;color:#696969" tooltip="小笹　嘉奈
+----
+----
+カシュカシュ
+
+予:10:00-16:00" tooltip-append-to-body="true"><div class="fc-content"><span class="fc-time">9:00</span> <span class="fc-title">小笹　嘉奈</span></div></a>
+
+
+
+
+element.style {
+    background-color: #faf0e6;
+    color: #696969;
+
+テキストダークより色が薄そう。
+
+
+//-----
+出勤前、赤、青 透明度0.2でも不評。見にくいらしい。
+背景白にする。
+    background-color: #faf0e6;
+

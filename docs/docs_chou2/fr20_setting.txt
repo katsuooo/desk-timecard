@@ -1,0 +1,37 @@
+201004
+
+sound off setting code
+
+勝浦高之
+fr20KeyboardInput.vue?8a87:23 
+fr20KeyboardInput.vue?8a87:24 128
+fr20KeyboardInput.vue?8a87:23 0
+fr20KeyboardInput.vue?8a87:24 48
+fr20KeyboardInput.vue?8a87:23 0
+fr20KeyboardInput.vue?8a87:24 48
+fr20KeyboardInput.vue?8a87:23 4
+fr20KeyboardInput.vue?8a87:24 52
+fr20KeyboardInput.vue?8a87:23 0
+fr20KeyboardInput.vue?8a87:24 48
+fr20KeyboardInput.vue?8a87:23 4
+fr20KeyboardInput.vue?8a87:24 52
+fr20KeyboardInput.vue?8a87:23 0
+fr20KeyboardInput.vue?8a87:24 48
+fr20KeyboardInput.vue?8a87:23 .
+fr20KeyboardInput.vue?8a87:24 46
+fr20KeyboardInput.vue?8a87:23 
+fr20KeyboardInput.vue?8a87:24 13
+fr20KeyboardInput.vue?8a87:30 enter- 004040.
+
+
+128 - extended c + ? ユーロサイン？
+13  - carrige return
+
+送付してもらった取説のQRコードが全然効かない。
+
+添付取説のsound offを読ませると効いた。
+リスト外のコードの時は音を出さないことで、読めてないことがわかる。
+画面がアクティブになってない場合も鳴らないので、わかりやすくなる。
+
+
+

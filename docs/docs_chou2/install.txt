@@ -1,0 +1,86 @@
+201103
+
+install
+version 0.9.0にする
+
+source .yarn_env
+cd vue
+git clone https://github.com/katsuooo/chou2-timecard.git
+cd chou2-timecard
+yarn install
+yarn build
+
+
+//--------------------
+pm2
+//----------------------
+
+pm2 start npm --name "chou2-timecard" -- run express:run 
+npmやないとだめかも。
+--port 3050 はpackage.json/scriptsで書いてる。
+
+//auto start 
+
+pm2 startup 
+
+で自動登録され、でてきたコマンドをコピペ実行して、設定を追加するといけるらしい。 
+最後にpm2 saveでなにかを保存。 
+
+
+chou2@chou2dell:~/vue/chou2-timecard$ pm2 startup
+[PM2] Init System found: systemd
+chou2
+[PM2] To setup the Startup Script, copy/paste the following command:
+sudo env PATH=$PATH:/usr/local/bin /home/chou2/.config/yarn/global/node_modules/pm2/bin/pm2 startup systemd -u chou2 --hp /home/chou2
+chou2@chou2dell:~/vue/chou2-timecard$ ^C
+
+
+
+https://qiita.com/ikemura23/items/68fb61b16c6752daa7e8 
+
+ひとまずこの手順でいけた。 
+
+
+pm2 list で番号を調べる
+pm2 restart 3 --watch　でwatchを追加
+
+
+
+//---------------------
+ ufwの設定
+//----------------
+chou2@chou2dell:~/vue/chou2-timecard$ sudo ufw status
+Status: active
+
+To                         Action      From
+--                         ------      ----
+50000                      DENY        Anywhere                  
+443                        ALLOW       Anywhere                  
+3000                       ALLOW       Anywhere                  
+3030                       ALLOW       Anywhere                  
+50001                      ALLOW       Anywhere                  
+3040                       ALLOW       Anywhere                  
+50000 (v6)                 DENY        Anywhere (v6)             
+443 (v6)                   ALLOW       Anywhere (v6)             
+3000 (v6)                  ALLOW       Anywhere (v6)             
+3030 (v6)                  ALLOW       Anywhere (v6)             
+50001 (v6)                 ALLOW       Anywhere (v6)             
+3040 (v6)                  ALLOW       Anywhere (v6)             
+
+
+sudo ufw allow 3050
+
+
+//----------------
+router
+//---------------
+192.168.1.1 user/1234 で設定画面
+詳細 > 静的IPマスカレード設定
+192.168.1.92 3050を追加
+
+
+
+
+
+
+

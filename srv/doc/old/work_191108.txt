@@ -1,0 +1,19 @@
+191108
+編集したスケジュールの書き込み。
+コレクション,dropしてinsert
+update
+collection.remove,
+collection.insert
+
+どちら？
+updateしてみる。
+
+removeではなくdropがある。
+dropして、insertしてみる。
+
+scheTableMongo.getCusSche() 
+appDateからcs_xxxxでcolNameを作成してdrop
+新データをinsert or insertOne
+
+object配列のinsertだとinsertManyか
+

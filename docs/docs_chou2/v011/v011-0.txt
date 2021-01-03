@@ -1,0 +1,15 @@
+200930
+
+start
+
+bue-util/selector/src/components/keyboard.vueでバーコードリーダFR20から
+HID keyboardの入力をjsのeventで読み込み。
+
+    mounted() {
+        window.addEventListener("keypress", e => {
+            console.log(String.fromCharCode(e.keyCode));
+        });
+    },
+
+これ一発で一文字づつ読めてるのを確認する。
+
